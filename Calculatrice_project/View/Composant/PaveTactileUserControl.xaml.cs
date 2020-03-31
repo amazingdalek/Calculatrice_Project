@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Calculatrice_project.View
+namespace Calculatrice_project.View.Composant
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindowView.xaml
+    /// Logique d'interaction pour PaveTactilUserControl.xaml
     /// </summary>
-    public partial class MainWindowView : Window
+    public partial class PaveTactilUserControl : UserControl
     {
-        public MainWindowView()
+        public PaveTactilUserControl()
         {
             InitializeComponent();
-            spPaveTactil.Children.Add(new Composant.PaveTactilUserControl());
         }
     }
 }

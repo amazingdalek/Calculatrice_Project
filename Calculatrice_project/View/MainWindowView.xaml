@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculatrice_project.View"
         mc:Ignorable="d"
-        Title="Calculatrice" Height="700" Width="450">
-    <Grid>
-        
-    </Grid>
+        Title="Calculatrice" Height="700" Width="450"
+        DataContext="{Binding Path=MainViewModel, Source={StaticResource Locator}}"
+            MinWidth="450"
+    MinHeight="700">
+    <DockPanel LastChildFill="True">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="1" Name="spPaveTactil"></DockPanel>
+        </Grid>
+    </DockPanel>
+
 </Window>

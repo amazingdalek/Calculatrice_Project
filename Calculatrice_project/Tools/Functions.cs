@@ -8,6 +8,6 @@ namespace Calculatrice_project.Tools
 {
     public class Functions
     {
-        public static 
+        //public static 
     }
 }
