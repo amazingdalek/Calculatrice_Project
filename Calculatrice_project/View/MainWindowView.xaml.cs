@@ -22,7 +22,7 @@ namespace Calculatrice_project.View
         public MainWindowView()
         {
             InitializeComponent();
-            spPaveTactil.Children.Add(new Composant.PaveTactilUserControl());
+            dpPaveTactil.Children.Add(new Composant.PaveTactilUserControl());
         }
     }
 }

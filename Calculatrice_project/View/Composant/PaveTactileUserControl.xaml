@@ -7,6 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="800"
              >
+    <UserControl.Resources>
+        <Image x:Key="MyImage" Source="/Ressources/Icone/delete-ico.png" Width="100"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -20,26 +23,33 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="0" ></Button>
-        <Button Grid.Column="1" Grid.Row="0" ></Button>
-        <Button Grid.Column="2" Grid.Row="0" ></Button>
-        <Button Grid.Column="3" Grid.Row="0" ></Button>
+        <Button Grid.Column="0" Grid.Row="0"   Style="{StaticResource  BlueContentButton}" Content="C" Name="btnEff" ></Button>
+        <Button Grid.Column="1" Grid.Row="0"  Style="{StaticResource  BlueContentButton}"  Content="÷" Name="btnDivi" ></Button>
+        <Button Grid.Column="2" Grid.Row="0"  Style="{StaticResource  BlueContentButton}" Content="×"  Name="btnMult" ></Button>
+        <Button Grid.Column="3" Grid.Row="0" Style="{StaticResource  BlueContentButton}" Content="{StaticResource MyImage}" Name="btnSupp">
+        </Button>
 
-        <Button Grid.Column="0" Grid.Row="1" ></Button>
-        <Button Grid.Column="1" Grid.Row="1" ></Button>
-        <Button Grid.Column="2" Grid.Row="1" ></Button>
-        <Button Grid.Column="3" Grid.Row="1" ></Button>
+        <Button Grid.Column="0" Grid.Row="1"  Content="7" Style="{StaticResource  ClassicButton}" Name="btn7" ></Button>
+        <Button Grid.Column="1" Grid.Row="1"  Content="8" Style="{StaticResource  ClassicButton}" Name="btn8" ></Button>
+        <Button Grid.Column="2" Grid.Row="1"  Content="9" Style="{StaticResource  ClassicButton}" Name="btn9" ></Button>
+        <Button Grid.Column="3" Grid.Row="1"  Content="-" Style="{StaticResource  BlueContentButton}" Name="btnMoins" ></Button>
 
-        <Button Grid.Column="0" Grid.Row="2" ></Button>
-        <Button Grid.Column="1" Grid.Row="2" ></Button>
-        <Button Grid.Column="2" Grid.Row="2" ></Button>
+        <Button Grid.Column="0" Grid.Row="2"  Content="4" Style="{StaticResource  ClassicButton}"  Name="btn4"></Button>
+        <Button Grid.Column="1" Grid.Row="2"  Content="5" Style="{StaticResource  ClassicButton}" Name="btn5" ></Button>
+        <Button Grid.Column="2" Grid.Row="2"  Content="6" Style="{StaticResource  ClassicButton}" Name="btn6" ></Button>
+        <Button Grid.Column="3" Grid.Row="2"  Content="+" Style="{StaticResource  BlueContentButton}" Name="btnPlus"></Button>
 
-        <Button Grid.Column="0" Grid.Row="3" ></Button>
-        <Button Grid.Column="1" Grid.Row="3" ></Button>
-        <Button Grid.Column="2" Grid.Row="3" ></Button>
-        <Button Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" ></Button>
+        <Button Grid.Column="0" Grid.Row="3"  Content="1" Style="{StaticResource  ClassicButton}" Name="btn1" ></Button>
+        <Button Grid.Column="1" Grid.Row="3"  Content="2" Style="{StaticResource  ClassicButton}" Name="btn2" ></Button>
+        <Button Grid.Column="2" Grid.Row="3"  Content="3" Style="{StaticResource  ClassicButton}" Name="btn3" ></Button>
+
+        <Button Grid.Column="0" Grid.Row="4"  Content="%" Style="{StaticResource  ClassicButton}" Name="btnPourc" ></Button>
+        <Button Grid.Column="1" Grid.Row="4"  Content="0" Style="{StaticResource  ClassicButton}" Name="btn0" ></Button>
+        <Button Grid.Column="2" Grid.Row="4"  Content="," Style="{StaticResource  ClassicButton}"  Name="btnVirgu"></Button>
+        <Button Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"  Content="="  Style="{StaticResource  BlueButton}" Name="btnEgal"></Button>
 
     </Grid>
 </UserControl>

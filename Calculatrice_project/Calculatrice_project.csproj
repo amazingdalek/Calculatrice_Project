@@ -117,9 +117,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Ressources\" />
+    <Resource Include="Ressources\Icone\delete-ico.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Ressources\Color.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Composant\PaveTactileUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

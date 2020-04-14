@@ -18,7 +18,7 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="3*"></RowDefinition>
             </Grid.RowDefinitions>
-            <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="1" Name="spPaveTactil"></DockPanel>
+            <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="1" Name="dpPaveTactil"></DockPanel>
         </Grid>
     </DockPanel>
 
