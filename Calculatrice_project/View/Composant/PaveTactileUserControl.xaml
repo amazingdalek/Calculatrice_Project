@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Calculatrice_project.View.Composant"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="800"
+             DataContext="{Binding Source={StaticResource Locator}, Path=PaveTactile}"
              >
     <UserControl.Resources>
         <Image x:Key="MyImage" Source="/Ressources/Icone/delete-ico.png" Width="100"/>
