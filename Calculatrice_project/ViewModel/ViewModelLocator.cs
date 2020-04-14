@@ -39,7 +39,15 @@ namespace Calculatrice_project.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-        
+
+        public PaveTactileViewModel PaveTactile
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<PaveTactileViewModel>();
+            }
+        }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels
