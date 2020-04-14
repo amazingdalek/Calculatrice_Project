@@ -27,30 +27,30 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="0"   Style="{StaticResource  BlueContentButton}" Content="C" Name="btnEff"  Command="{Binding ButtonCommand}" ></Button>
-        <Button Grid.Column="1" Grid.Row="0"  Style="{StaticResource  BlueContentButton}"  Content="÷" Name="btnDivi"  Command="{Binding ButtonCommand}" ></Button>
-        <Button Grid.Column="2" Grid.Row="0"  Style="{StaticResource  BlueContentButton}" Content="×"  Name="btnMult" Command="{Binding ButtonCommand}"  ></Button>
-        <Button Grid.Column="3" Grid.Row="0" Style="{StaticResource  BlueContentButton}" Content="{StaticResource MyImage}" Name="btnSupp" Command="{Binding ButtonCommand}" >
+        <Button Grid.Column="0" Grid.Row="0"   Style="{StaticResource  BlueContentButton}" Content="C" Name="btnEff"  Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="1" Grid.Row="0"  Style="{StaticResource  BlueContentButton}"  Content="÷" Name="btnDivi"  Command="{Binding ButtonCommandDivi}" ></Button>
+        <Button Grid.Column="2" Grid.Row="0"  Style="{StaticResource  BlueContentButton}" Content="×"  Name="btnMult" Command="{Binding ButtonCommandMult}"  ></Button>
+        <Button Grid.Column="3" Grid.Row="0" Style="{StaticResource  BlueContentButton}" Content="{StaticResource MyImage}" Name="btnSupp" Command="{Binding ButtonCommandSupp}" >
         </Button>
 
-        <Button Grid.Column="0" Grid.Row="1"  Content="7" Style="{StaticResource  ClassicButton}" Name="btn7"  Command="{Binding ButtonCommand}" ></Button>
-        <Button Grid.Column="1" Grid.Row="1"  Content="8" Style="{StaticResource  ClassicButton}" Name="btn8" Command="{Binding ButtonCommand}"  ></Button>
-        <Button Grid.Column="2" Grid.Row="1"  Content="9" Style="{StaticResource  ClassicButton}" Name="btn9" Command="{Binding ButtonCommand}"  ></Button>
-        <Button Grid.Column="3" Grid.Row="1"  Content="-" Style="{StaticResource  BlueContentButton}" Name="btnMoins" Command="{Binding ButtonCommand}" ></Button>
+        <Button Grid.Column="0" Grid.Row="1"  Content="7" Style="{StaticResource  ClassicButton}" Name="btn7"  Command="{Binding ButtonCommand7}" ></Button>
+        <Button Grid.Column="1" Grid.Row="1"  Content="8" Style="{StaticResource  ClassicButton}" Name="btn8" Command="{Binding ButtonCommand8}"  ></Button>
+        <Button Grid.Column="2" Grid.Row="1"  Content="9" Style="{StaticResource  ClassicButton}" Name="btn9" Command="{Binding ButtonCommand9}"  ></Button>
+        <Button Grid.Column="3" Grid.Row="1"  Content="-" Style="{StaticResource  BlueContentButton}" Name="btnMoins" Command="{Binding ButtonCommandMoins}" ></Button>
 
-        <Button Grid.Column="0" Grid.Row="2"  Content="4" Style="{StaticResource  ClassicButton}"  Name="btn4" Command="{Binding ButtonCommand}" ></Button>
-        <Button Grid.Column="1" Grid.Row="2"  Content="5" Style="{StaticResource  ClassicButton}" Name="btn5" Command="{Binding ButtonCommand}" ></Button>
-        <Button Grid.Column="2" Grid.Row="2"  Content="6" Style="{StaticResource  ClassicButton}" Name="btn6" Command="{Binding ButtonCommand}" ></Button>
-        <Button Grid.Column="3" Grid.Row="2"  Content="+" Style="{StaticResource  BlueContentButton}" Name="btnPlus" Command="{Binding ButtonCommand}" ></Button>
+        <Button Grid.Column="0" Grid.Row="2"  Content="4" Style="{StaticResource  ClassicButton}"  Name="btn4" Command="{Binding ButtonCommand4}" ></Button>
+        <Button Grid.Column="1" Grid.Row="2"  Content="5" Style="{StaticResource  ClassicButton}" Name="btn5" Command="{Binding ButtonCommand5}" ></Button>
+        <Button Grid.Column="2" Grid.Row="2"  Content="6" Style="{StaticResource  ClassicButton}" Name="btn6" Command="{Binding ButtonCommand6}" ></Button>
+        <Button Grid.Column="3" Grid.Row="2"  Content="+" Style="{StaticResource  BlueContentButton}" Name="btnPlus" Command="{Binding ButtonCommandPlus}" ></Button>
 
         <Button Grid.Column="0" Grid.Row="3"  Content="1" Style="{StaticResource  ClassicButton}" Name="btn1" Command="{Binding ButtonCommand1}" ></Button>
-        <Button Grid.Column="1" Grid.Row="3"  Content="2" Style="{StaticResource  ClassicButton}" Name="btn2" Command="{Binding ButtonCommand}" ></Button>
-        <Button Grid.Column="2" Grid.Row="3"  Content="3" Style="{StaticResource  ClassicButton}" Name="btn3" Command="{Binding ButtonCommand}"  ></Button>
+        <Button Grid.Column="1" Grid.Row="3"  Content="2" Style="{StaticResource  ClassicButton}" Name="btn2" Command="{Binding ButtonCommand2}" ></Button>
+        <Button Grid.Column="2" Grid.Row="3"  Content="3" Style="{StaticResource  ClassicButton}" Name="btn3" Command="{Binding ButtonCommand3}"  ></Button>
 
-        <Button Grid.Column="0" Grid.Row="4"  Content="%" Style="{StaticResource  ClassicButton}" Name="btnPourc" Command="{Binding ButtonCommand}" ></Button>
-        <Button Grid.Column="1" Grid.Row="4"  Content="0" Style="{StaticResource  ClassicButton}" Name="btn0" Command="{Binding ButtonCommand}"  ></Button>
-        <Button Grid.Column="2" Grid.Row="4"  Content="," Style="{StaticResource  ClassicButton}"  Name="btnVirgu" Command="{Binding ButtonCommand}" ></Button>
-        <Button Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"  Content="="  Style="{StaticResource  BlueButton}" Name="btnEgal" Command="{Binding ButtonCommand}" ></Button>
+        <Button Grid.Column="0" Grid.Row="4"  Content="%" Style="{StaticResource  ClassicButton}" Name="btnPourc" Command="{Binding ButtonCommandPourc}" ></Button>
+        <Button Grid.Column="1" Grid.Row="4"  Content="0" Style="{StaticResource  ClassicButton}" Name="btn0" Command="{Binding ButtonCommand0}"  ></Button>
+        <Button Grid.Column="2" Grid.Row="4"  Content="," Style="{StaticResource  ClassicButton}"  Name="btnVirgu" Command="{Binding ButtonCommandVirgu}" ></Button>
+        <Button Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"  Content="="  Style="{StaticResource  BlueButton}" Name="btnEgal" Command="{Binding ButtonCommandEgal}" ></Button>
 
     </Grid>
 </UserControl>
