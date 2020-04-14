@@ -30,6 +30,7 @@ namespace Calculatrice_project.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<PaveTactileViewModel>();
         }
 
         public MainViewModel Main
