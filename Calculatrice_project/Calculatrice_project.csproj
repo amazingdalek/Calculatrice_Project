@@ -81,6 +81,7 @@
     <Compile Include="Tools\Functions.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PaveTactileViewModel.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\Composant\PaveTactileUserControl.xaml.cs">
       <DependentUpon>PaveTactileUserControl.xaml</DependentUpon>
