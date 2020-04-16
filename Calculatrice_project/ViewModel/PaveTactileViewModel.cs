@@ -12,6 +12,54 @@ namespace Calculatrice_project.ViewModel
 {
     public class PaveTactileViewModel : ViewModelBase
     {
+        private bool _isScientifique;
+        public bool IsScientifique
+        {
+            get
+            {
+                return _isScientifique;
+            }
+            set
+            {
+                _isScientifique = value;
+                if (_isScientifique == true)
+                {
+                    PaveTactileScVisi = Visibility.Visible;
+                    PaveTactileVisi = Visibility.Collapsed;
+                }
+                else
+                {
+                    PaveTactileScVisi = Visibility.Collapsed;
+                    PaveTactileVisi = Visibility.Visible;
+                }
+            }
+        }
+        private Visibility _paveTactileScVisi = Visibility.Collapsed;
+        public Visibility PaveTactileScVisi 
+        {
+            get
+            {
+                return _paveTactileScVisi;
+            }
+            set
+            {
+                _paveTactileScVisi = value;
+                RaisePropertyChanged();
+            }
+        }
+        private Visibility _paveTactileVisi = Visibility.Visible;
+        public Visibility PaveTactileVisi
+        {
+            get
+            {
+                return _paveTactileVisi;
+            }
+            set
+            {
+                _paveTactileVisi = value;
+                RaisePropertyChanged();
+            }
+        }
         public RelayCommand ButtonCommand0 { get; set; }
         public RelayCommand ButtonCommand1 { get; set; }
         public RelayCommand ButtonCommand2 { get; set; }
