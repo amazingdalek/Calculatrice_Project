@@ -25,9 +25,11 @@ namespace Calculatrice_project.View.Composant
         public PaveTactilUserControl()
         {
             InitializeComponent();
+        }
 
-            var viewmodel = (PaveTactileViewModel) DataContext;
-
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Focus();
         }
     }
 }

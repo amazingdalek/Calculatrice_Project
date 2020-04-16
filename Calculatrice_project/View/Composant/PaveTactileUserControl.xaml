@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Calculatrice_project.View.Composant.PaveTactilUserControl"
+<UserControl x:Class="Calculatrice_project.View.Composant.PaveTactilUserControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,52 @@
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="800"
              DataContext="{Binding Source={StaticResource Locator}, Path=PaveTactile}"
+             Focusable="True"
+            Loaded="UserControl_Loaded"
              >
+
+    <UserControl.InputBindings>
+
+        <KeyBinding Key="NumPad0" Command="{Binding ButtonCommand0}"/>
+        <KeyBinding Key="NumPad1" Command="{Binding ButtonCommand1}"/>
+        <KeyBinding Key="NumPad2" Command="{Binding ButtonCommand2}"/>
+        <KeyBinding Key="NumPad3" Command="{Binding ButtonCommand3}"/>
+        <KeyBinding Key="NumPad4" Command="{Binding ButtonCommand4}"/>
+        <KeyBinding Key="NumPad5" Command="{Binding ButtonCommand5}"/>
+        <KeyBinding Key="NumPad6" Command="{Binding ButtonCommand6}"/>
+        <KeyBinding Key="NumPad7" Command="{Binding ButtonCommand7}"/>
+        <KeyBinding Key="NumPad8" Command="{Binding ButtonCommand8}"/>
+        <KeyBinding Key="NumPad9" Command="{Binding ButtonCommand9}"/>
+        
+        <KeyBinding Key="Divide" Command="{Binding ButtonCommandDivi}"/>
+        <KeyBinding Key="Multiply" Command="{Binding ButtonCommandMult}"/>
+        <KeyBinding Modifiers="Shift" Key="OemPlus" Command="{Binding ButtonCommandPlus}"/>
+        <KeyBinding Key="OemMinus" Command="{Binding ButtonCommandMoins}"/>
+        <KeyBinding Key="OemBackslash" Command="{Binding ButtonCommandDivi}"/>
+        <KeyBinding Key="Subtract" Command="{Binding ButtonCommandMoins}"/>
+        <KeyBinding Key="Add" Command="{Binding ButtonCommandPlus}"/>
+        <KeyBinding Key="D6" Command="{Binding ButtonCommandMoins}"/>
+
+        <KeyBinding Key="Delete" Command="{Binding ButtonCommandEff}"/>
+        <KeyBinding Key="Backspace" Command="{Binding ButtonCommandSupp}"/>
+        <KeyBinding Key="Enter" Command="{Binding ButtonCommandEgal}" />
+        <KeyBinding Key="OemPlus" Command="{Binding ButtonCommandEgal}"/>
+
+        <KeyBinding Modifiers="Shift" Key="OemPeriod" Command="{Binding ButtonCommandVirgu}"/>
+        <KeyBinding Key="OemComma" Command="{Binding ButtonCommandVirgu}"/>
+        <KeyBinding Key="Decimal" Command="{Binding ButtonCommandVirgu}"/>
+
+        <KeyBinding Modifiers="Shift" Key="D0" Command="{Binding ButtonCommand0}"/>
+        <KeyBinding Modifiers="Shift" Key="D1" Command="{Binding ButtonCommand1}"/>
+        <KeyBinding Modifiers="Shift" Key="D2" Command="{Binding ButtonCommand2}"/>
+        <KeyBinding Modifiers="Shift" Key="D3" Command="{Binding ButtonCommand3}"/>
+        <KeyBinding Modifiers="Shift" Key="D4" Command="{Binding ButtonCommand4}"/>
+        <KeyBinding Modifiers="Shift" Key="D5" Command="{Binding ButtonCommand5}"/>
+        <KeyBinding Modifiers="Shift" Key="D6" Command="{Binding ButtonCommand6}"/>
+        <KeyBinding Modifiers="Shift" Key="D7" Command="{Binding ButtonCommand7}"/>
+        <KeyBinding Modifiers="Shift" Key="D8" Command="{Binding ButtonCommand8}"/>
+        <KeyBinding Modifiers="Shift" Key="D9" Command="{Binding ButtonCommand9}"/>
+    </UserControl.InputBindings>
     <UserControl.Resources>
         <Image x:Key="MyImage" Source="/Ressources/Icone/delete-ico.png" Width="100"/>
     </UserControl.Resources>
@@ -53,4 +98,5 @@
         <Button Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"  Content="="  Style="{StaticResource  BlueButton}" Name="btnEgal" Command="{Binding ButtonCommandEgal}" ></Button>
 
     </Grid>
+
 </UserControl>
