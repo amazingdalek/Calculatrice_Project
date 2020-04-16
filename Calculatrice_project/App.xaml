@@ -8,6 +8,9 @@
   <Application.Resources>
     <ResourceDictionary>
             <SolidColorBrush x:Key="BlueClassic" Color="#0b567c" />
+            <SolidColorBrush x:Key="BlueDarkClassic" Color="#074D70" />
+            <SolidColorBrush x:Key="GreyDarkClassic" Color="#C6C5C5" />
+            <SolidColorBrush x:Key="WhiteDarkClassic" Color="#F0F0F0" />
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:Calculatrice_project.ViewModel" />
             <Style TargetType="Button" x:Key="BlueButton" >
                 <Setter Property="Background" Value="{StaticResource ResourceKey=BlueClassic}"/>
@@ -21,7 +24,7 @@
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="DarkBlue" TargetName="Border" />
+                                    <Setter Property="Background" Value="{StaticResource ResourceKey=BlueDarkClassic}" TargetName="Border" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -40,7 +43,7 @@
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="DarkBlue" TargetName="Border" />
+                                    <Setter Property="Background" Value="{StaticResource ResourceKey=GreyDarkClassic }" TargetName="Border" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -59,7 +62,7 @@
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="DarkBlue" TargetName="Border" />
+                                    <Setter Property="Background" Value="{StaticResource ResourceKey=WhiteDarkClassic }" TargetName="Border" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
