@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Calculatrice_project.Tools;
 using GalaSoft.MvvmLight;
 
 namespace Calculatrice_project.ViewModel
@@ -32,7 +33,14 @@ namespace Calculatrice_project.ViewModel
         public RelayCommand ButtonCommandSupp { get; set; }
         public RelayCommand ButtonCommandEgal { get; set; }
 
-        private int numero;
+        private string caractere;
+
+        private double resultat;
+
+        private string[] lstOperateurs = { "+", "-", "*", "/"};
+
+        private string[] lstActions = { "eff", "supp", "%", "="};
+
         public PaveTactileViewModel()
         {
             ButtonCommand0 = new RelayCommand(o => ButtonOnclick(0));
@@ -60,9 +68,37 @@ namespace Calculatrice_project.ViewModel
 
         private void ButtonOnclick(object sender)
         {
-            MessageBox.Show(sender.ToString());
+            Caractere = sender.ToString();
         }
 
-        public int Numero { get => numero; set => numero = value; }
+        public string Caractere
+        { 
+            get => caractere;
+            set 
+            {
+                if (!lstActions.Contains(value))
+                {
+                    caractere += value;
+                    RaisePropertyChanged();
+                }
+                else
+                {
+                    if (value.Equals("="))
+                    {
+                        Resultat = Functions.calculerResultat(Caractere);
+                    }
+                }
+            }
+        }
+
+        public double Resultat
+        {
+            get => resultat;
+            set
+            {
+                resultat = value;
+                RaisePropertyChanged();
+            }
+        }
     }
 }
