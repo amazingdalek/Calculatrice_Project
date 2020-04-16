@@ -12,6 +12,7 @@ namespace Calculatrice_project.Tools
     {
         public static double calculerResultat(String calcul)
         {
+            calcul = calcul.Replace(',', '.');
             Expression e = new Expression(calcul);
             return e.calculate();
         }
