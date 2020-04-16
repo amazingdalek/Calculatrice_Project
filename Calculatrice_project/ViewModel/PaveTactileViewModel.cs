@@ -33,9 +33,9 @@ namespace Calculatrice_project.ViewModel
         public RelayCommand ButtonCommandSupp { get; set; }
         public RelayCommand ButtonCommandEgal { get; set; }
 
-        private string caractere;
+        private string calcul;
 
-        private double resultat;
+        private string resultat;
 
         private string[] lstOperateurs = { "+", "-", "*", "/"};
 
@@ -68,30 +68,44 @@ namespace Calculatrice_project.ViewModel
 
         private void ButtonOnclick(object sender)
         {
-            Caractere = sender.ToString();
+            Calcul = sender.ToString();
         }
 
-        public string Caractere
+        public string Calcul
         { 
-            get => caractere;
+            get => calcul;
             set 
             {
                 if (!lstActions.Contains(value))
                 {
-                    caractere += value;
+                    calcul += value;
                     RaisePropertyChanged();
                 }
                 else
                 {
                     if (value.Equals("="))
                     {
-                        Resultat = Functions.calculerResultat(Caractere);
+                        Resultat = Functions.calculerResultat(calcul).ToString();
+                    }
+                    if (value.Equals("supp"))
+                    {
+                        if (!calcul.Equals(""))
+                        {
+                            calcul = calcul.Remove(calcul.Length - 1, 1);
+                            RaisePropertyChanged();
+                        }
+                    }
+                    if (value.Equals("eff"))
+                    {
+                        calcul = "";
+                        Resultat = "";
+                        RaisePropertyChanged();
                     }
                 }
             }
         }
 
-        public double Resultat
+        public string Resultat
         {
             get => resultat;
             set
