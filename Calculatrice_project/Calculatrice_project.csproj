@@ -86,6 +86,9 @@
     <Compile Include="View\Composant\PaveTactileUserControl.xaml.cs">
       <DependentUpon>PaveTactileUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Composant\ResultatUserControl.xaml.cs">
+      <DependentUpon>ResultatUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Composant\PaveTactileUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Composant\ResultatUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
