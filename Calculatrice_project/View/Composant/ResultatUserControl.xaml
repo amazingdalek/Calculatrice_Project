@@ -9,10 +9,19 @@
              DataContext="{Binding Path=PaveTactile, Source={StaticResource Locator}}"
              >
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
+
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition  Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
+        <Label  Grid.Column="0" Grid.Row="0" Content="Mode Scientifique" HorizontalContentAlignment="Center"></Label>
+        <ToggleButton IsChecked="{Binding IsScientifique, Mode=TwoWay}" Background="Red" Margin="10" Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Center"  ></ToggleButton>
         <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right"  FontSize="50"  Margin="0,0,20,0" Text="{Binding Calcul}" ></TextBlock>
         <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right"  FontSize="40" Margin="0,0,20,0" Opacity="0.5" Text="{Binding Resultat}" Visibility="{Binding NombreVisibility}"></TextBlock>
     </Grid>

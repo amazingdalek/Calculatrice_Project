@@ -10,21 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Calculatrice_project.View
+namespace Calculatrice_project.View.Composant
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindowView.xaml
+    /// Logique d'interaction pour PaveTactilScUserControl.xaml
     /// </summary>
-    public partial class MainWindowView : Window
+    public partial class PaveTactilScUserControl : UserControl
     {
-        public MainWindowView()
+        public PaveTactilScUserControl()
         {
             InitializeComponent();
-            dpPaveTactil.Children.Add(new Composant.PaveTactilUserControl());
-            dpResultat.Children.Add(new Composant.ResultatUserControl());
-            dpPaveTactilSc.Children.Add(new Composant.PaveTactilScUserControl());
+        }
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Focus();
         }
     }
 }

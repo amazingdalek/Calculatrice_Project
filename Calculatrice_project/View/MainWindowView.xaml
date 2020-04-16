@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Calculatrice_project.View"
         mc:Ignorable="d"
         Title="Calculatrice" Height="700" Width="450"
-        DataContext="{Binding Path=MainViewModel, Source={StaticResource Locator}}"
+        DataContext="{Binding Path=PaveTactile, Source={StaticResource Locator}}"
             MinWidth="450"
     MinHeight="700">
     <DockPanel LastChildFill="True">
@@ -18,8 +18,9 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="3*"></RowDefinition>
             </Grid.RowDefinitions>
-            <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="0" Name="dpResultat"></DockPanel>
-            <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="1" Name="dpPaveTactil"></DockPanel>
+            <DockPanel  LastChildFill="True" Grid.Column="0" Grid.Row="0" Name="dpResultat"></DockPanel>
+            <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="1" Name="dpPaveTactil" Visibility="{Binding PaveTactilcVisi}"  ></DockPanel>
+            <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="1" Name="dpPaveTactilSc" Visibility="{Binding PaveTactileScVisi}" ></DockPanel>
         </Grid>
     </DockPanel>
 

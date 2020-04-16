@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="Calculatrice_project.View.Composant.PaveTactilScUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Calculatrice_project.View.Composant"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800"
+             DataContext="{Binding Source={StaticResource Locator}, Path=PaveTactile}"
+             Focusable="True"
+            Loaded="UserControl_Loaded"
+             >
+
+    <UserControl.InputBindings>
+
+        <KeyBinding Key="NumPad0" Command="{Binding ButtonCommand0}"/>
+        <KeyBinding Key="NumPad1" Command="{Binding ButtonCommand1}"/>
+        <KeyBinding Key="NumPad2" Command="{Binding ButtonCommand2}"/>
+        <KeyBinding Key="NumPad3" Command="{Binding ButtonCommand3}"/>
+        <KeyBinding Key="NumPad4" Command="{Binding ButtonCommand4}"/>
+        <KeyBinding Key="NumPad5" Command="{Binding ButtonCommand5}"/>
+        <KeyBinding Key="NumPad6" Command="{Binding ButtonCommand6}"/>
+        <KeyBinding Key="NumPad7" Command="{Binding ButtonCommand7}"/>
+        <KeyBinding Key="NumPad8" Command="{Binding ButtonCommand8}"/>
+        <KeyBinding Key="NumPad9" Command="{Binding ButtonCommand9}"/>
+
+        <KeyBinding Key="Divide" Command="{Binding ButtonCommandDivi}"/>
+        <KeyBinding Key="Multiply" Command="{Binding ButtonCommandMult}"/>
+        <KeyBinding Modifiers="Shift" Key="OemPlus" Command="{Binding ButtonCommandPlus}"/>
+        <KeyBinding Key="OemMinus" Command="{Binding ButtonCommandMoins}"/>
+        <KeyBinding Key="OemBackslash" Command="{Binding ButtonCommandDivi}"/>
+        <KeyBinding Key="Subtract" Command="{Binding ButtonCommandMoins}"/>
+        <KeyBinding Key="Add" Command="{Binding ButtonCommandPlus}"/>
+        <KeyBinding Key="D6" Command="{Binding ButtonCommandMoins}"/>
+
+        <KeyBinding Key="Delete" Command="{Binding ButtonCommandEff}"/>
+        <KeyBinding Key="Backspace" Command="{Binding ButtonCommandSupp}"/>
+        <KeyBinding Key="Enter" Command="{Binding ButtonCommandEgal}" />
+        <KeyBinding Key="OemPlus" Command="{Binding ButtonCommandEgal}"/>
+
+        <KeyBinding Modifiers="Shift" Key="OemPeriod" Command="{Binding ButtonCommandVirgu}"/>
+        <KeyBinding Key="OemComma" Command="{Binding ButtonCommandVirgu}"/>
+        <KeyBinding Key="Decimal" Command="{Binding ButtonCommandVirgu}"/>
+
+        <KeyBinding Modifiers="Shift" Key="D0" Command="{Binding ButtonCommand0}"/>
+        <KeyBinding Modifiers="Shift" Key="D1" Command="{Binding ButtonCommand1}"/>
+        <KeyBinding Modifiers="Shift" Key="D2" Command="{Binding ButtonCommand2}"/>
+        <KeyBinding Modifiers="Shift" Key="D3" Command="{Binding ButtonCommand3}"/>
+        <KeyBinding Modifiers="Shift" Key="D4" Command="{Binding ButtonCommand4}"/>
+        <KeyBinding Modifiers="Shift" Key="D5" Command="{Binding ButtonCommand5}"/>
+        <KeyBinding Modifiers="Shift" Key="D6" Command="{Binding ButtonCommand6}"/>
+        <KeyBinding Modifiers="Shift" Key="D7" Command="{Binding ButtonCommand7}"/>
+        <KeyBinding Modifiers="Shift" Key="D8" Command="{Binding ButtonCommand8}"/>
+        <KeyBinding Modifiers="Shift" Key="D9" Command="{Binding ButtonCommand9}"/>
+    </UserControl.InputBindings>
+    <UserControl.Resources>
+        <Image x:Key="MyImage" Source="/Ressources/Icone/delete-ico.png" Width="100"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="0" Grid.Row="0"   Style="{StaticResource  BlueContentButton}" Content="("   Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="1" Grid.Row="0"   Style="{StaticResource  BlueContentButton}" Content=")"   Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="2" Grid.Row="0"   Style="{StaticResource  BlueContentButton}" Content="C"  Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="3" Grid.Row="0"  Style="{StaticResource  BlueContentButton}"  Content="÷"  Command="{Binding ButtonCommandDivi}" ></Button>
+        <Button Grid.Column="4" Grid.Row="0"  Style="{StaticResource  BlueContentButton}" Content="×"   Command="{Binding ButtonCommandMult}"  ></Button>
+        <Button Grid.Column="5" Grid.Row="0" Style="{StaticResource  BlueContentButton}" Content="{StaticResource MyImage}" Name="btnSupp" Command="{Binding ButtonCommandSupp}" ></Button>
+
+        <Button Grid.Column="0" Grid.Row="1"   Style="{StaticResource  BlueContentButton}" Content="X²"   Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="1" Grid.Row="1"   Style="{StaticResource  BlueContentButton}" Content="X³"   Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="2" Grid.Row="1"  Content="7" Style="{StaticResource  ClassicButton}"  Command="{Binding ButtonCommand7}" ></Button>
+        <Button Grid.Column="3" Grid.Row="1"  Content="8" Style="{StaticResource  ClassicButton}"  Command="{Binding ButtonCommand8}"  ></Button>
+        <Button Grid.Column="4" Grid.Row="1"  Content="9" Style="{StaticResource  ClassicButton}" Command="{Binding ButtonCommand9}"  ></Button>
+        <Button Grid.Column="5" Grid.Row="1"  Content="-" Style="{StaticResource  BlueContentButton}" Command="{Binding ButtonCommandMoins}" ></Button>
+
+        <Button Grid.Column="0" Grid.Row="2"   Style="{StaticResource  BlueContentButton}" Content="√ "   Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="1" Grid.Row="2"   Style="{StaticResource  BlueContentButton}" Content="𝜋"   Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="2" Grid.Row="2"  Content="4" Style="{StaticResource  ClassicButton}"  Command="{Binding ButtonCommand4}" ></Button>
+        <Button Grid.Column="3" Grid.Row="2"  Content="5" Style="{StaticResource  ClassicButton}" Command="{Binding ButtonCommand5}" ></Button>
+        <Button Grid.Column="4" Grid.Row="2"  Content="6" Style="{StaticResource  ClassicButton}"  Command="{Binding ButtonCommand6}" ></Button>
+        <Button Grid.Column="5" Grid.Row="2"  Content="+" Style="{StaticResource  BlueContentButton}"  Command="{Binding ButtonCommandPlus}" ></Button>
+
+        <Button Grid.Column="0" Grid.Row="3"   Style="{StaticResource  BlueContentButton}" Content="log"   Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="1" Grid.Row="3"   Style="{StaticResource  BlueContentButton}" Content="sin"   Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="2" Grid.Row="3"  Content="1" Style="{StaticResource  ClassicButton}" Command="{Binding ButtonCommand1}" ></Button>
+        <Button Grid.Column="3" Grid.Row="3"  Content="2" Style="{StaticResource  ClassicButton}" Command="{Binding ButtonCommand2}" ></Button>
+        <Button Grid.Column="4" Grid.Row="3"  Content="3" Style="{StaticResource  ClassicButton}"  Command="{Binding ButtonCommand3}"  ></Button>
+
+        <Button Grid.Column="0" Grid.Row="4"   Style="{StaticResource  BlueContentButton}" Content="cos"   Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="1" Grid.Row="4"   Style="{StaticResource  BlueContentButton}" Content="tan"   Command="{Binding ButtonCommandEff}" ></Button>
+        <Button Grid.Column="2" Grid.Row="4"  Content="%" Style="{StaticResource  ClassicButton}"  Command="{Binding ButtonCommandPourc}" ></Button>
+        <Button Grid.Column="3" Grid.Row="4"  Content="0" Style="{StaticResource  ClassicButton}"  Command="{Binding ButtonCommand0}"  ></Button>
+        <Button Grid.Column="4" Grid.Row="4"  Content="," Style="{StaticResource  ClassicButton}"  Command="{Binding ButtonCommandVirgu}" ></Button>
+        <Button Grid.Column="5" Grid.Row="3" Grid.RowSpan="2"  Content="="  Style="{StaticResource  BlueButton}"  Command="{Binding ButtonCommandEgal}" ></Button>
+
+    </Grid>
+
+</UserControl>
