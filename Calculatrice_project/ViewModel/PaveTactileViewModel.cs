@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Calculatrice_project.Tools;
 using GalaSoft.MvvmLight;
 
 namespace Calculatrice_project.ViewModel
@@ -80,7 +81,14 @@ namespace Calculatrice_project.ViewModel
         public RelayCommand ButtonCommandSupp { get; set; }
         public RelayCommand ButtonCommandEgal { get; set; }
 
-        private int numero;
+        private string calcul;
+
+        private string resultat;
+
+        private string[] lstOperateurs = { "+", "-", "*", "/"};
+
+        private string[] lstActions = { "eff", "supp", "%", "="};
+
         public PaveTactileViewModel()
         {
             ButtonCommand0 = new RelayCommand(o => ButtonOnclick(0));
@@ -108,9 +116,57 @@ namespace Calculatrice_project.ViewModel
 
         private void ButtonOnclick(object sender)
         {
-            MessageBox.Show(sender.ToString());
+            Calcul = sender.ToString();
         }
 
-        public int Numero { get => numero; set => numero = value; }
+        public string Calcul
+        { 
+            get => calcul;
+            set 
+            {
+                if (!lstActions.Contains(value))
+                {
+                    calcul += value;
+                    RaisePropertyChanged();
+                }
+                else
+                {
+                    if (value.Equals("="))
+                    {
+                        Resultat = Functions.calculerResultat(calcul).ToString();
+                    }
+                    if (value.Equals("supp"))
+                    {
+                        if (!calcul.Equals(""))
+                        {
+                            calcul = calcul.Remove(calcul.Length - 1, 1);
+                            RaisePropertyChanged();
+                        }
+                    }
+                    if (value.Equals("eff"))
+                    {
+                        calcul = "";
+                        Resultat = "";
+                        RaisePropertyChanged();
+                    }
+                    if (value.Equals("%"))
+                    {
+                        calcul += "/100";
+                        RaisePropertyChanged();
+                        Resultat = Functions.calculerResultat(calcul).ToString();
+                    }
+                }
+            }
+        }
+
+        public string Resultat
+        {
+            get => resultat;
+            set
+            {
+                resultat = value;
+                RaisePropertyChanged();
+            }
+        }
     }
 }
