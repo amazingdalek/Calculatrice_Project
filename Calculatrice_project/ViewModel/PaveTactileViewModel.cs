@@ -101,6 +101,12 @@ namespace Calculatrice_project.ViewModel
                         Resultat = "";
                         RaisePropertyChanged();
                     }
+                    if (value.Equals("%"))
+                    {
+                        calcul += "/100";
+                        RaisePropertyChanged();
+                        Resultat = Functions.calculerResultat(calcul).ToString();
+                    }
                 }
             }
         }
