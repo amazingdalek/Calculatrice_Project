@@ -13,7 +13,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right"  FontSize="50"  Margin="0,0,20,0" Text="{Binding Nombre}" ></TextBlock>
-        <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right"  FontSize="40" Margin="0,0,20,0" Opacity="0.5" Text="{Binding Calcul}" Visibility="{Binding CalculVisibility}"></TextBlock>
+        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right"  FontSize="50"  Margin="0,0,20,0" Text="{Binding Calcul}" ></TextBlock>
+        <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right"  FontSize="40" Margin="0,0,20,0" Opacity="0.5" Text="{Binding Resultat}" Visibility="{Binding NombreVisibility}"></TextBlock>
     </Grid>
 </UserControl>
