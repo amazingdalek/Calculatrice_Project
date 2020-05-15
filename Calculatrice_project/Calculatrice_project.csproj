@@ -86,6 +86,9 @@
     <Compile Include="ViewModel\PaveTactileViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\Composant\NavBarUserControl.xaml.cs">
+      <DependentUpon>NavBarUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Composant\PaveTactileUserControl.xaml.cs">
       <DependentUpon>PaveTactileUserControl.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Ressources\Color.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Composant\NavBarUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

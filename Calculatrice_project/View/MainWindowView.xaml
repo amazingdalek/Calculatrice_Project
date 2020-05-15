@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:Calculatrice_project.View"
         mc:Ignorable="d"
         Title="Calculatrice" Height="700" Width="450"
-        DataContext="{Binding Path=PaveTactile, Source={StaticResource Locator}}"
+        DataContext="{Binding Path=Main, Source={StaticResource Locator}}"
             MinWidth="450"
     MinHeight="700">
     <DockPanel LastChildFill="True">
+
+
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -18,10 +20,65 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="3*"></RowDefinition>
             </Grid.RowDefinitions>
-            <DockPanel  LastChildFill="True" Grid.Column="0" Grid.Row="0" Name="dpResultat"></DockPanel>
-            <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="1" Name="dpPaveTactil" Visibility="{Binding PaveTactilcVisi}"  ></DockPanel>
-            <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="1" Name="dpPaveTactilSc" Visibility="{Binding PaveTactileScVisi}" ></DockPanel>
+       
+
+
+        
+        <StackPanel  Grid.Column="0" Grid.RowSpan="2"   Panel.ZIndex="2" Name="pnlLeftMenu" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="-150,0,0,0">
+                <Border Opacity="0.8"  BorderBrush="#AF1719" BorderThickness="1" Width="150" Background="Black" >
+                    <Grid Opacity="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ToggleButton Grid.Row="0" Content="Normal" IsChecked="{Binding IsNormal,Mode=TwoWay}"  >
+                            <ToggleButton.Triggers>
+                                <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                    <BeginStoryboard Storyboard="{StaticResource sbHideLeftMenu}"></BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                    <BeginStoryboard Storyboard="{StaticResource sbHideLeftMenu}"></BeginStoryboard>
+                                </EventTrigger>
+                            </ToggleButton.Triggers>
+                        </ToggleButton>
+                        <ToggleButton Grid.Row="1" Content="Scientifique" IsChecked="{Binding IsScientifique,Mode=TwoWay}" >
+                            <ToggleButton.Triggers>
+                                <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                    <BeginStoryboard Storyboard="{StaticResource sbHideLeftMenu}"></BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                    <BeginStoryboard Storyboard="{StaticResource sbHideLeftMenu}"></BeginStoryboard>
+                                    
+                                </EventTrigger>
+                            </ToggleButton.Triggers>
+                        </ToggleButton>
+                    </Grid>
+                
+                    
+            </Border>
+                <WrapPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+                    <Button  Width="48" Height="48"  Command="{Binding ButtonHide}" Content="Hide" Visibility="{Binding IsHideNavBar}">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard Storyboard="{StaticResource sbHideLeftMenu}"></BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button  Width="48" Height="48"  Command="{Binding ButtonShow}" Content="Show" Visibility="{Binding IsShowNavBar}">
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard Storyboard="{StaticResource sbShowLeftMenu}"></BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+                    </Button>
+                </WrapPanel>
+            </StackPanel>
+         
+            <DockPanel  LastChildFill="True" Grid.Column="1" Grid.Row="0" Name="dpResultat"></DockPanel>
+        <DockPanel LastChildFill="True" Grid.Column="1" Grid.Row="1" Name="dpPaveTactil" Visibility="{Binding PaveTactilcVisi}"  ></DockPanel>
+        <DockPanel LastChildFill="True" Grid.Column="1" Grid.Row="1" Name="dpPaveTactilSc" Visibility="{Binding PaveTactileScVisi}" ></DockPanel>
         </Grid>
     </DockPanel>
+ 
 
 </Window>

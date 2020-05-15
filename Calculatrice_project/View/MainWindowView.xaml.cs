@@ -1,4 +1,5 @@
-﻿using System;
+using Calculatrice_project.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +23,13 @@ namespace Calculatrice_project.View
         public MainWindowView()
         {
             InitializeComponent();
+
+          // dpNavBar.Children.Add(new Composant.NavBarUserControl());
             dpPaveTactil.Children.Add(new Composant.PaveTactilUserControl());
             dpResultat.Children.Add(new Composant.ResultatUserControl());
             dpPaveTactilSc.Children.Add(new Composant.PaveTactilScUserControl());
         }
+
+
     }
 }
