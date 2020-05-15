@@ -7,6 +7,48 @@ namespace Calculatrice_project.ViewModel
     {
         public RelayCommand ButtonHide { get; set; }
         public RelayCommand ButtonShow { get; set; }
+        public RelayCommand ButtonHisto { get; set; }
+        private int _heightMain = 700;
+        public int HeightMain
+        {
+            get
+            {
+                return _heightMain;
+            }
+            set
+            {
+                _heightMain = value;
+                RaisePropertyChanged();
+            }
+        }
+        private int _widthMain = 450;
+        public int WidthMain
+        {
+            get
+            {
+                return _widthMain;
+            }
+            set
+            {
+                _widthMain = value;
+                RaisePropertyChanged();
+            }
+        }
+        private Visibility _histoVisi = Visibility.Collapsed;
+        public Visibility HistoVisi
+        {
+            get
+            {
+                return _histoVisi;
+            }
+            set
+            {
+                _histoVisi = value;
+                WidthMain += 250;
+                RaisePropertyChanged();
+            }
+        }
+        
         private Visibility _isHideNavBar = Visibility.Collapsed;
         public Visibility IsHideNavBar
         {
@@ -36,8 +78,20 @@ namespace Calculatrice_project.ViewModel
 
         public MainViewModel()
         {
+            ButtonHisto = new RelayCommand(o => BtnHistoClick());
             ButtonHide = new RelayCommand(o => BtnHideShowNav("Hide"));
             ButtonShow = new RelayCommand(o => BtnHideShowNav("Show"));
+        }
+        private void BtnHistoClick()
+        {
+            if(HistoVisi == Visibility.Collapsed)
+            {
+                HistoVisi = Visibility.Visible;
+            }
+             else if (HistoVisi == Visibility.Visible)
+            {
+                HistoVisi = Visibility.Collapsed;
+            }
         }
         private void BtnHideShowNav(string type)
         {
@@ -70,6 +124,7 @@ namespace Calculatrice_project.ViewModel
                 }
                 BtnHideShowNav("Hide");
                 RaisePropertyChanged("IsNormal");
+                RaisePropertyChanged();
 
 
             }
@@ -92,6 +147,7 @@ namespace Calculatrice_project.ViewModel
                 }
                 BtnHideShowNav("Hide");
                 RaisePropertyChanged("IsScientifique");
+                RaisePropertyChanged();
 
             }
         }

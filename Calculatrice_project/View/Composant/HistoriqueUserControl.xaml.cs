@@ -19,12 +19,13 @@ namespace Calculatrice_project.View.Composant
     /// <summary>
     /// Logique d'interaction pour NavBarUserControl.xaml
     /// </summary>
-    public partial class NavBarUserControl : UserControl
+    public partial class HistoriqueUserControl : UserControl
     {
-        public NavBarUserControl()
+        public HistoriqueUserControl()
         {
             InitializeComponent();
         }
 
+        
     }
 }

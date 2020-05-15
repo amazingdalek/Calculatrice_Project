@@ -81,13 +81,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\CalculatriceHistoriqueModel.cs" />
     <Compile Include="Tools\Functions.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PaveTactileViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="View\Composant\NavBarUserControl.xaml.cs">
-      <DependentUpon>NavBarUserControl.xaml</DependentUpon>
+    <Compile Include="View\Composant\HistoriqueUserControl.xaml.cs">
+      <DependentUpon>HistoriqueUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Composant\PaveTactileUserControl.xaml.cs">
       <DependentUpon>PaveTactileUserControl.xaml</DependentUpon>
@@ -137,7 +138,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Composant\NavBarUserControl.xaml">
+    <Page Include="View\Composant\HistoriqueUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,7 +160,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Resource Include="Ressources\Icone\navbar_btn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

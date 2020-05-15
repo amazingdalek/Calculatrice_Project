@@ -28,6 +28,7 @@ namespace Calculatrice_project.View
             dpPaveTactil.Children.Add(new Composant.PaveTactilUserControl());
             dpResultat.Children.Add(new Composant.ResultatUserControl());
             dpPaveTactilSc.Children.Add(new Composant.PaveTactilScUserControl());
+            dpHisto.Children.Add(new Composant.HistoriqueUserControl());
         }
 
 

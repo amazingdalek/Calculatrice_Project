@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Calculatrice_project.Model;
 using Calculatrice_project.Tools;
 using GalaSoft.MvvmLight;
 
@@ -99,6 +101,8 @@ namespace Calculatrice_project.ViewModel
 
         private string[] lstActions = { "eff", "supp", "%", "="};
 
+       public ObservableCollection<CalculatriceHistoriqueModel> ListHistorique { get; set; }
+
         public PaveTactileViewModel()
         {
             ButtonCommand0 = new RelayCommand(o => ButtonOnclick(0));
@@ -132,6 +136,7 @@ namespace Calculatrice_project.ViewModel
             ButtonCommandSin = new RelayCommand(o => ButtonOnclick("sin("));
             ButtonCommandCos = new RelayCommand(o => ButtonOnclick("cos("));
             ButtonCommandTan = new RelayCommand(o => ButtonOnclick("tan("));
+            ListHistorique = new ObservableCollection<CalculatriceHistoriqueModel>();
         }
 
         private void ButtonOnclick(object sender)
@@ -154,6 +159,11 @@ namespace Calculatrice_project.ViewModel
                     if (value.Equals("="))
                     {
                         Resultat = Functions.calculerResultat(calcul).ToString();
+                        ListHistorique.Insert(0, new CalculatriceHistoriqueModel
+                        {
+                            CalculHisto = calcul,
+                            ResultatHisto = resultat
+                        });
                     }
                     if (value.Equals("supp"))
                     {
@@ -173,7 +183,7 @@ namespace Calculatrice_project.ViewModel
                     {
                         calcul += "/100";
                         RaisePropertyChanged();
-                        Resultat = Functions.calculerResultat(calcul).ToString();
+                        Resultat = String.Format("0:n", Functions.calculerResultat(calcul).ToString());
                     }
                 }
             }

@@ -95,7 +95,7 @@
         <Button Grid.Column="0" Grid.Row="4"  Content="%" Style="{StaticResource  ClassicButton}" Name="btnPourc" Command="{Binding ButtonCommandPourc}" ></Button>
         <Button Grid.Column="1" Grid.Row="4"  Content="0" Style="{StaticResource  ClassicButton}" Name="btn0" Command="{Binding ButtonCommand0}"  ></Button>
         <Button Grid.Column="2" Grid.Row="4"  Content="," Style="{StaticResource  ClassicButton}"  Name="btnVirgu" Command="{Binding ButtonCommandVirgu}" ></Button>
-        <Button Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"  Content="="  Style="{StaticResource  BlueButton}" Name="btnEgal" Command="{Binding ButtonCommandEgal}" ></Button>
+        <Button Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"  Content="=" VerticalContentAlignment ="Center"  Style="{StaticResource  BlueButton}" Name="btnEgal" Command="{Binding ButtonCommandEgal}" ></Button>
 
     </Grid>
 

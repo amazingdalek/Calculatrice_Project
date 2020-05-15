@@ -9,17 +9,17 @@
         <ResourceDictionary>
         
             <Storyboard x:Key="sbShowLeftMenu" >
-                <ThicknessAnimation  Storyboard.TargetName="pnlLeftMenu" Storyboard.TargetProperty="Margin" From="-150,0,0,0" To="0,0,0,0" DecelerationRatio=".9" Duration="0:0:0.5" />
+                <ThicknessAnimation  Storyboard.TargetName="pnlLeftMenu" Storyboard.TargetProperty="Margin" From="-100,0,0,0" To="0,0,0,0" DecelerationRatio=".9" Duration="0:0:0.3" />
             </Storyboard>
             
             <Storyboard x:Key="sbHideLeftMenu">
-                <ThicknessAnimation  Storyboard.TargetName="pnlLeftMenu" Storyboard.TargetProperty="Margin" From="0,0,0,0" To="-150,0,0,0" AccelerationRatio=".9" Duration="0:0:0.5" />
+                <ThicknessAnimation  Storyboard.TargetName="pnlLeftMenu" Storyboard.TargetProperty="Margin" From="0,0,0,0" To="-100,0,0,0" AccelerationRatio=".9" Duration="0:0:0.3" />
             </Storyboard>
         
             <SolidColorBrush x:Key="BlueClassic" Color="#0b567c" />
             <SolidColorBrush x:Key="BlueDarkClassic" Color="#074D70" />
             <SolidColorBrush x:Key="GreyDarkClassic" Color="#C6C5C5" />
-            <SolidColorBrush x:Key="WhiteDarkClassic" Color="#F0F0F0" />
+            <SolidColorBrush x:Key="WhiteDarkClassic" Color="#E2E5E7" />
         
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:Calculatrice_project.ViewModel" />
         
@@ -30,7 +30,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1.5" BorderBrush="Transparent">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  />
                             </Border>
                             <ControlTemplate.Triggers>
@@ -50,7 +50,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1.5" BorderBrush="Transparent">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  />
                             </Border>
                             <ControlTemplate.Triggers>
@@ -64,12 +64,12 @@
             </Style>
 
             <Style TargetType="Button" x:Key="ClassicButtonSc" >
-                <Setter Property="Background" Value="White"/>
+                <Setter Property="Background" Value="WhiteSmoke"/>
                 <Setter Property="FontSize" Value="40" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1.5" BorderBrush="Transparent">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  />
                             </Border>
                             <ControlTemplate.Triggers>
@@ -89,7 +89,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1.5" BorderBrush="Transparent">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  />
                             </Border>
                             <ControlTemplate.Triggers>
@@ -109,7 +109,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1.5" BorderBrush="Transparent">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  />
                             </Border>
                             <ControlTemplate.Triggers>
@@ -123,12 +123,12 @@
             </Style>
         
         <Style TargetType="Button" x:Key="ClassicButton" >
-            <Setter Property="Background" Value="White"/>
+                <Setter Property="Background" Value="WhiteSmoke"/>
             <Setter Property="FontSize" Value="50" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1.5" BorderBrush="Transparent">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  />
                             </Border>
                             <ControlTemplate.Triggers>
