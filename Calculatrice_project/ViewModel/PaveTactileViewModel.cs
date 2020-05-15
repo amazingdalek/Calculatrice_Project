@@ -80,6 +80,16 @@ namespace Calculatrice_project.ViewModel
         public RelayCommand ButtonCommandEff { get; set; }
         public RelayCommand ButtonCommandSupp { get; set; }
         public RelayCommand ButtonCommandEgal { get; set; }
+        public RelayCommand ButtonCommandParDroite { get; set; }
+        public RelayCommand ButtonCommandParGauche { get; set; }
+        public RelayCommand ButtonCommandXCarre { get; set; }
+        public RelayCommand ButtonCommandXCube { get; set; }
+        public RelayCommand ButtonCommandRacine { get; set; }
+        public RelayCommand ButtonCommandPi { get; set; }
+        public RelayCommand ButtonCommandLog { get; set; }
+        public RelayCommand ButtonCommandSin { get; set; }
+        public RelayCommand ButtonCommandCos { get; set; }
+        public RelayCommand ButtonCommandTan { get; set; }
 
         private string calcul;
 
@@ -112,6 +122,16 @@ namespace Calculatrice_project.ViewModel
             ButtonCommandSupp = new RelayCommand(o => ButtonOnclick("supp"));
             ButtonCommandEgal = new RelayCommand(o => ButtonOnclick("="));
 
+            ButtonCommandParDroite = new RelayCommand(o => ButtonOnclick(")"));
+            ButtonCommandParGauche = new RelayCommand(o => ButtonOnclick("("));
+            ButtonCommandXCarre = new RelayCommand(o => ButtonOnclick("^2"));
+            ButtonCommandXCube = new RelayCommand(o => ButtonOnclick("^3"));
+            ButtonCommandRacine = new RelayCommand(o => ButtonOnclick("sqrt("));
+            ButtonCommandPi = new RelayCommand(o => ButtonOnclick("pi"));
+            ButtonCommandLog = new RelayCommand(o => ButtonOnclick("log10("));
+            ButtonCommandSin = new RelayCommand(o => ButtonOnclick("sin("));
+            ButtonCommandCos = new RelayCommand(o => ButtonOnclick("cos("));
+            ButtonCommandTan = new RelayCommand(o => ButtonOnclick("tan("));
         }
 
         private void ButtonOnclick(object sender)
