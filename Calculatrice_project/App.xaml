@@ -5,13 +5,83 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              d1p1:Ignorable="d"
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
-  <Application.Resources>
-    <ResourceDictionary>
+    <Application.Resources>
+        <ResourceDictionary>
+        
+            <Storyboard x:Key="sbShowLeftMenu" >
+                <ThicknessAnimation  Storyboard.TargetName="pnlLeftMenu" Storyboard.TargetProperty="Margin" From="-150,0,0,0" To="0,0,0,0" DecelerationRatio=".9" Duration="0:0:0.5" />
+            </Storyboard>
+            
+            <Storyboard x:Key="sbHideLeftMenu">
+                <ThicknessAnimation  Storyboard.TargetName="pnlLeftMenu" Storyboard.TargetProperty="Margin" From="0,0,0,0" To="-150,0,0,0" AccelerationRatio=".9" Duration="0:0:0.5" />
+            </Storyboard>
+        
             <SolidColorBrush x:Key="BlueClassic" Color="#0b567c" />
             <SolidColorBrush x:Key="BlueDarkClassic" Color="#074D70" />
             <SolidColorBrush x:Key="GreyDarkClassic" Color="#C6C5C5" />
             <SolidColorBrush x:Key="WhiteDarkClassic" Color="#F0F0F0" />
+        
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:Calculatrice_project.ViewModel" />
+        
+            <Style TargetType="Button" x:Key="BlueButtonSc" >
+                <Setter Property="Background" Value="{StaticResource ResourceKey=BlueClassic}"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource ResourceKey=BlueDarkClassic}" TargetName="Border" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style TargetType="Button" x:Key="BlueContentButtonSc" >
+                <Setter Property="Foreground" Value="{StaticResource ResourceKey=BlueClassic}"/>
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource ResourceKey=GreyDarkClassic }" TargetName="Border" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style TargetType="Button" x:Key="ClassicButtonSc" >
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource ResourceKey=WhiteDarkClassic }" TargetName="Border" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
             <Style TargetType="Button" x:Key="BlueButton" >
                 <Setter Property="Background" Value="{StaticResource ResourceKey=BlueClassic}"/>
                 <Setter Property="Foreground" Value="White"/>
@@ -31,6 +101,7 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+        
         <Style TargetType="Button" x:Key="BlueContentButton" >
                 <Setter Property="Foreground" Value="{StaticResource ResourceKey=BlueClassic}"/>
                 <Setter Property="Background" Value="LightGray"/>
@@ -49,8 +120,8 @@
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
-
             </Style>
+        
         <Style TargetType="Button" x:Key="ClassicButton" >
             <Setter Property="Background" Value="White"/>
             <Setter Property="FontSize" Value="50" />
@@ -69,6 +140,7 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+        
         </ResourceDictionary>
   </Application.Resources>
 </Application>
