@@ -137,6 +137,7 @@ namespace Calculatrice_project.ViewModel
             ButtonCommandCos = new RelayCommand(o => ButtonOnclick("cos("));
             ButtonCommandTan = new RelayCommand(o => ButtonOnclick("tan("));
             ListHistorique = new ObservableCollection<CalculatriceHistoriqueModel>();
+            resultat = "0";
         }
 
         private void ButtonOnclick(object sender)

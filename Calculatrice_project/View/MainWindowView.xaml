@@ -17,6 +17,7 @@
     <Window.Resources>
         <Image x:Key="MyImage" Source="/Ressources/Icone/navbar_btn.png" Width="50" />
         <Image x:Key="MyImage2" Source="/Ressources/Icone/navbar_btn.png" Width="50" />
+        <Image x:Key="MyImage3" Source="/Ressources/Icone/history.png" Width="50" />
     </Window.Resources>
     <DockPanel LastChildFill="True">
 
@@ -31,15 +32,15 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="3*"></RowDefinition>
             </Grid.RowDefinitions>
-       
 
 
-        
-        <StackPanel  Grid.Column="0" Grid.RowSpan="3"   Panel.ZIndex="2" Name="pnlLeftMenu" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="-100,0,0,0" >
+
+
+            <StackPanel  Grid.Column="0" Grid.RowSpan="3"   Panel.ZIndex="2" Name="pnlLeftMenu" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="-100,0,0,0" >
                 <Border Opacity="0.8"  BorderBrush="Black" BorderThickness="1" Width="100" Background="WhiteSmoke"  >
                     <Grid Opacity="1">
                         <Grid.RowDefinitions>
-                           
+
                             <RowDefinition Height="auto"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
@@ -60,14 +61,14 @@
                                 </EventTrigger>
                                 <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                                     <BeginStoryboard Storyboard="{StaticResource sbHideLeftMenu}"></BeginStoryboard>
-                                    
+
                                 </EventTrigger>
                             </ToggleButton.Triggers>
                         </ToggleButton>
                     </Grid>
-                
-                    
-            </Border>
+
+
+                </Border>
                 <WrapPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal">
                     <Button Focusable="false" BorderThickness="0"  Background="Transparent"  Width="45" Height="45"  Command="{Binding ButtonHide}" Content="{StaticResource MyImage}" Visibility="{Binding IsHideNavBar}">
                         <Button.Triggers>
@@ -77,23 +78,23 @@
                         </Button.Triggers>
                     </Button>
                     <Button Focusable="false"  BorderThickness="0"  Background="Transparent" Width="45" Height="45"  Command="{Binding ButtonShow}" Content="{StaticResource MyImage2}" Visibility="{Binding IsShowNavBar}">
-                    <Button.Triggers>
-                        <EventTrigger RoutedEvent="Button.Click">
-                            <BeginStoryboard Storyboard="{StaticResource sbShowLeftMenu}"></BeginStoryboard>
-                        </EventTrigger>
-                    </Button.Triggers>
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard Storyboard="{StaticResource sbShowLeftMenu}"></BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
                     </Button>
-                    
+
                 </WrapPanel>
             </StackPanel>
 
             <DockPanel  LastChildFill="True" Grid.Row="1" Name="dpResultat"></DockPanel>
             <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="2" Name="dpPaveTactil" Visibility="{Binding PaveTactileVisi}"  ></DockPanel>
             <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="2" Name="dpPaveTactilSc" Visibility="{Binding PaveTactileScVisi}" ></DockPanel>
-            <Button HorizontalAlignment="Right" Margin="5" Grid.Column="0" Grid.Row="0"  Height="20px" Width="20px" Command="{Binding ButtonHisto}" ></Button>
+            <Button Margin="0,5,5.2,4.4" Grid.Column="0" Grid.Row="0" BorderThickness="0" Background="Transparent" Content="{StaticResource MyImage3}" Command="{Binding ButtonHisto}" HorizontalAlignment="Right" Height="45" Width="45" />
             <DockPanel LastChildFill="True" Grid.Column="1" Grid.RowSpan="3" Grid.Row="0" Name="dpHisto" Visibility="{Binding HistoVisi}" ></DockPanel>
         </Grid>
     </DockPanel>
- 
+
 
 </Window>
