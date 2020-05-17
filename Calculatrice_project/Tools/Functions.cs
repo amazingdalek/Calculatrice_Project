@@ -10,12 +10,17 @@ namespace Calculatrice_project.Tools
 {
     public static class Functions
     {
-        public static string calculerResultat(String calcul)
+        public static string calculerResultat(string calcul)
         {
-            calcul = calcul.Replace(',', '.');
-            Expression e = new Expression(calcul);
+            string resultat = "0";
+            if (calcul != null && calcul != "")
+            {
+                calcul = calcul.Replace(',', '.');
+                Expression e = new Expression(calcul);
 
-            return e.calculate().ToString("N");
+                resultat = e.calculate().ToString("N");
+            }
+            return resultat;
         }
     }
 }
