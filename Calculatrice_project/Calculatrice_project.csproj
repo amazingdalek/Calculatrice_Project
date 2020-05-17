@@ -162,5 +162,8 @@
   <ItemGroup>
     <Resource Include="Ressources\Icone\navbar_btn.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icone\history.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
