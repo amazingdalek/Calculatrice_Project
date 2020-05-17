@@ -158,7 +158,7 @@ namespace Calculatrice_project.ViewModel
                 {
                     if (value.Equals("="))
                     {
-                        Resultat = Functions.calculerResultat(calcul).ToString();
+                        Resultat = Functions.calculerResultat(calcul);
                         ListHistorique.Insert(0, new CalculatriceHistoriqueModel
                         {
                             CalculHisto = calcul,
