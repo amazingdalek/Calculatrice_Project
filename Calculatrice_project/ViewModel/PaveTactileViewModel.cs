@@ -102,7 +102,24 @@ namespace Calculatrice_project.ViewModel
         private string[] lstActions = { "eff", "supp", "%", "="};
 
        public ObservableCollection<CalculatriceHistoriqueModel> ListHistorique { get; set; }
-
+        private CalculatriceHistoriqueModel _selectedCalculHisto { get; set; }
+        public CalculatriceHistoriqueModel SelectedCalculHisto {
+            get
+            {
+                return _selectedCalculHisto;
+            }
+            set
+            {
+                _selectedCalculHisto = value;
+                _breakRuleCalcul = true;
+                Calcul = _selectedCalculHisto.CalculHisto;
+                Resultat = _selectedCalculHisto.ResultatHisto;
+                _breakRuleCalcul = false;
+                RaisePropertyChanged("Calcul");
+                RaisePropertyChanged("Resultat");
+                RaisePropertyChanged();
+            }
+        }
         public PaveTactileViewModel()
         {
             ButtonCommand0 = new RelayCommand(o => ButtonOnclick(0));
@@ -144,13 +161,18 @@ namespace Calculatrice_project.ViewModel
         {
             Calcul = sender.ToString();
         }
-
+        private bool _breakRuleCalcul = false;
         public string Calcul
         { 
             get => calcul;
             set 
             {
-                if (!lstActions.Contains(value))
+                if(_breakRuleCalcul)
+                {
+                    calcul = value;
+                    RaisePropertyChanged();
+                }
+               else if (!lstActions.Contains(value))
                 {
                     calcul += value;
                     RaisePropertyChanged();
@@ -163,7 +185,7 @@ namespace Calculatrice_project.ViewModel
                         ListHistorique.Insert(0, new CalculatriceHistoriqueModel
                         {
                             CalculHisto = calcul,
-                            ResultatHisto = resultat
+                            ResultatHisto = Convert.ToDouble(resultat).ToString("N")
                         });
                     }
                     if (value.Equals("supp"))

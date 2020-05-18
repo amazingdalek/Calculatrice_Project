@@ -44,7 +44,14 @@ namespace Calculatrice_project.ViewModel
             set
             {
                 _histoVisi = value;
-                WidthMain += 250;
+                if(WidthMain<700)
+                {
+                    WidthMain += 250;
+                }
+                else
+                {
+                    WidthMain -= 250;
+                }
                 RaisePropertyChanged();
             }
         }

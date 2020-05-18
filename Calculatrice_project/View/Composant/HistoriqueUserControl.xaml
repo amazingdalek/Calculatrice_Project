@@ -7,7 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="250"
                           DataContext="{Binding Source={StaticResource Locator}, Path=PaveTactile}"
-             Focusable="False">
+             Focusable="False"
+             MinWidth="250"
+             Width="{Binding WidthHisto}">
 
     <DockPanel>
         <Grid>
@@ -16,7 +18,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="Historique" Margin="20,0,20,0"></TextBlock>
-            <ListBox Margin="5,0,5,0" Grid.Row="1" HorizontalContentAlignment="Right" SelectionMode="Extended" ItemsSource="{Binding ListHistorique}" Focusable="False">
+            <ListBox Margin="5,0,5,0" Grid.Row="1" HorizontalContentAlignment="Right" SelectionMode="Extended" SelectedItem="{Binding SelectedCalculHisto}" ItemsSource="{Binding ListHistorique}" Focusable="False">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid >
